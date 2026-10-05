@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Übungen ASCII &amp; UTF-8</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <div class="course">MI.P150 Informatik</div>
+      <h1>Übungen: ASCII &amp; UTF-8</h1>
+    </div>
+    <div class="meta">
+      <span id="step-label"></span>
+      <div class="progress"><div id="progress-bar"></div></div>
+    </div>
+  </header>
+
+  <main id="app" aria-live="polite"></main>
+
+  <nav class="navbar">
+    <button id="btn-prev" class="btn secondary" type="button">← Zurück</button>
+    <button id="btn-next" class="btn" type="button">Weiter →</button>
+  </nav>
+
+  <!-- Referenzen (werden per Button eingeblendet) -->
+  <dialog id="dlg-ascii">
+    <div class="dlg-head">
+      <h2>ASCII-Tabelle (Auszug)</h2>
+      <button class="btn small secondary" type="button" data-close>Schliessen ✕</button>
+    </div>
+    <div id="ascii-table" class="ascii-table"></div>
+  </dialog>
+
+  <dialog id="dlg-utf8">
+    <div class="dlg-head">
+      <h2>UTF-8-Schema</h2>
+      <button class="btn small secondary" type="button" data-close>Schliessen ✕</button>
+    </div>
+    <table class="utf8-table">
+      <thead><tr><th>Byte 1</th><th>Byte 2</th><th>Byte 3</th><th>Byte 4</th><th>Länge</th></tr></thead>
+      <tbody>
+        <tr><td><b>0</b>xxxxxxx</td><td></td><td></td><td></td><td>1 Byte (8 Bit)</td></tr>
+        <tr><td><b>110</b>xxxxx</td><td><b>10</b>xxxxxx</td><td></td><td></td><td>2 Bytes (16 Bit)</td></tr>
+        <tr><td><b>1110</b>xxxx</td><td><b>10</b>xxxxxx</td><td><b>10</b>xxxxxx</td><td></td><td>3 Bytes (24 Bit)</td></tr>
+        <tr><td><b>11110</b>xxx</td><td><b>10</b>xxxxxx</td><td><b>10</b>xxxxxx</td><td><b>10</b>xxxxxx</td><td>4 Bytes (32 Bit)</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Die führenden Einsen im ersten Byte verraten, wie viele Bytes das Zeichen lang ist. Folgebytes beginnen immer mit <code>10</code>.</p>
+  </dialog>
+
+  <dialog id="dlg-binary">
+    <div class="dlg-head">
+      <h2>Binär ↔ Dezimal</h2>
+      <button class="btn small secondary" type="button" data-close>Schliessen ✕</button>
+    </div>
+    <p>Jede Stelle einer Binärzahl hat einen Stellenwert. Addiere die Stellenwerte aller Einsen:</p>
+    <table class="utf8-table">
+      <thead><tr><th>Stellenwert</th><th>64</th><th>32</th><th>16</th><th>8</th><th>4</th><th>2</th><th>1</th></tr></thead>
+      <tbody>
+        <tr><td>1000001</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Beispiel: 1000001 = 64 + 1 = 65 → <b>A</b></p>
+  </dialog>
+
+  <script src="scorm.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
