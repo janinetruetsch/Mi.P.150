@@ -55,19 +55,19 @@
       items: [
         {
           id: '2a', type: 'fields',
-          prompt: 'Welches Wort steht hier?<br><span class="bits">1010000 1001000 1011010</span>',
-          fields: [{ label: 'Wort:', answer: ['PHZ'], norm: 'exact', mono: true }],
+          prompt: 'Welches Wort steht hier?<br><span class="bits">1010000 1001000 1011010 1001000</span>',
+          fields: [{ label: 'Wort:', answer: ['PHZH'], norm: 'exact', mono: true }],
           diagnose: function (v) {
             var s = norm.exact(v[0]);
-            if (s.toUpperCase() === 'PHZ') return 'Die Buchstaben stimmen – achte aber auf Gross-/Kleinschreibung! Beginnen die Codes mit <code>10…</code> oder <code>11…</code>?';
+            if (s.toUpperCase() === 'PHZH') return 'Die Buchstaben stimmen – achte aber auf Gross-/Kleinschreibung! Beginnen die Codes mit <code>10…</code> oder <code>11…</code>?';
             return null;
           },
           hints: [
-            'Jede 7er-Gruppe ist genau ein Zeichen. Es sind also drei Buchstaben.',
+            'Jede 7er-Gruppe ist genau ein Zeichen. Es sind also vier Buchstaben.',
             'Rechne die erste Gruppe um: <code>1010000</code> = 64 + 16 = 80. Welcher Buchstabe hat den Code 80?',
-            'Alle drei Codes beginnen mit <code>10</code> – es sind also Grossbuchstaben (65–90).'
+            'Alle vier Codes beginnen mit <code>10</code> – es sind also Grossbuchstaben (65–90).'
           ],
-          explain: '1010000 = 80 = <b>P</b>, 1001000 = 72 = <b>H</b>, 1011010 = 90 = <b>Z</b>.'
+          explain: '1010000 = 80 = <b>P</b>, 1001000 = 72 = <b>H</b>, 1011010 = 90 = <b>Z</b>, 1001000 = 72 = <b>H</b>. Tipp: Der zweite und der vierte Code sind identisch – also auch derselbe Buchstabe.'
         }
       ]
     },

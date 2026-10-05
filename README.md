@@ -9,7 +9,7 @@ Interaktive Übungen (ca. 10 Minuten) zur Vertiefung der Folien «Codiertabelle 
 | # | Thema | Aufgabentyp |
 |---|-------|-------------|
 | 1 | Was fällt auf? Gross- vs. Kleinbuchstaben (Bit mit Wert 32) | Multiple Choice + Zahl |
-| 2 | Binär → Text: `1010000 1001000 1011010` | Freitext |
+| 2 | Binär → Text: `1010000 1001000 1011010 1001000` → PHZH | Freitext |
 | 3 | Gross ↔ Klein durch Umschalten eines Bits (m → M, G → g) | Bitmuster eingeben |
 | 4 | Wie viele Zeichen mit 7/8 Bit? Wie viele Bit für 5'000 Zeichen? | Zahlen |
 | 5 | UTF-8: Länge eines Zeichens am ersten Byte erkennen | Zuordnung (Dropdown) |
